@@ -16,11 +16,6 @@ def job():
             cwd=cwd,
             check=True
         )
-        # Store last refresh timestamp so the API can surface it
-        ts_path = os.path.join(os.path.dirname(__file__), "last_refreshed.txt")
-        with open(ts_path, "w") as f:
-            from datetime import datetime
-            f.write(datetime.now().isoformat())
         print("⏰ [SCHEDULER] Daily Pipeline Execution Succeeded.\n")
     except subprocess.CalledProcessError as e:
         print("⏰ [SCHEDULER] Daily Pipeline Execution FAILED.")

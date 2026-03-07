@@ -11,10 +11,11 @@ def run_phase(phase_dir, script_name):
     cwd = os.path.join(os.path.dirname(__file__), "..", phase_dir)
     
     start_time = time.time()
+    import sys
     try:
         # Run the python script explicitly
         result = subprocess.run(
-            ["python3", script_name],
+            [sys.executable, script_name],
             cwd=cwd,
             check=True,
             text=True,
@@ -45,6 +46,12 @@ def main():
         # Phase 4: Vectorization & Local Storage (ChromaDB)
         run_phase("phase4", "run_phase4.py")
         
+        # Write the final success timestamp so the Next.js API can read it
+        ts_path = os.path.join(os.path.dirname(__file__), "last_refreshed.txt")
+        from datetime import datetime
+        with open(ts_path, "w") as f:
+            f.write(datetime.now().isoformat())
+            
         overall_duration = time.time() - overall_start
         print(f"🎉 MASTER PIPELINE FINISHED SUCCESSFULLY! Total time: {overall_duration:.2f} seconds.")
         print("💡 The Vector Database is now fully updated and armed with fresh data.")
