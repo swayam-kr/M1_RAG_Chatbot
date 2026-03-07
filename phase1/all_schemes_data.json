@@ -1,0 +1,407 @@
+[
+  {
+    "Scheme Name": "Groww Multicap Fund Direct Growth",
+    "Tags": [
+      "Equity",
+      "Multi Cap",
+      "Very High Risk"
+    ],
+    "NAV 06 Mar '26": "₹10.48",
+    "Min. for SIP": "₹500",
+    "Expense ratio": "0.51%",
+    "Returns": {
+      "3 months": "+2.33%",
+      "6 months": "+5.13%"
+    },
+    "Top Holdings": [
+      {
+        "Name": "Larsen & Toubro Ltd.",
+        "Sector": "Construction",
+        "Allocation": "4.61%"
+      },
+      {
+        "Name": "Multi Commodity Exchange Of India Ltd.",
+        "Sector": "Services",
+        "Allocation": "3.27%"
+      },
+      {
+        "Name": "TD Power Systems Ltd.",
+        "Sector": "Capital Goods",
+        "Allocation": "2.80%"
+      },
+      {
+        "Name": "Bank of Maharashtra",
+        "Sector": "Financial",
+        "Allocation": "2.51%"
+      },
+      {
+        "Name": "HDFC Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "2.44%"
+      }
+    ],
+    "Fund Managers": [
+      {
+        "Name": "Anupam Tiwari",
+        "Education": "Mr. Tiwari is a Chartered Accountant.",
+        "Experience": "Prior to joining Groww Mutual Fund (formerly, Indiabulls Mutual Fund), he was associated with Axis Mutual Fund, Principal Mutual Fund (July 25, 2011-Sep 21, 2016), Reliance Life Insurance Ltd. (Sep 22, 2010-Jul 15, 2011) and Reliance MF (Mar 21, 2005-Sep 21, 2010)."
+      },
+      {
+        "Name": "Saptarshee Chatterjee",
+        "Education": "CFA Level 3, PGDM (Finance), BE (E.T.C.E) from Jadavpur University.",
+        "Experience": "Prior to joining Groww MF he was associated with Centrum Wealth Management Limited & Edelweiss Financial Services Limited."
+      },
+      {
+        "Name": "Gagan Thareja",
+        "Education": "Master of Finance",
+        "Experience": "Prior to joining the Groww MF, he was associated with ASK Investment Managers, Kotak Investment Advisors Ltd."
+      }
+    ],
+    "Tax Implications": {
+      "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
+      "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+    },
+    "Sector Allocation": [
+      {
+        "Sector": "Financial",
+        "Allocation": "29.63%"
+      },
+      {
+        "Sector": "Automobile",
+        "Allocation": "10.83%"
+      },
+      {
+        "Sector": "Services",
+        "Allocation": "10.81%"
+      },
+      {
+        "Sector": "Construction",
+        "Allocation": "10.43%"
+      },
+      {
+        "Sector": "Capital Goods",
+        "Allocation": "9.82%"
+      },
+      {
+        "Sector": "Chemicals",
+        "Allocation": "7.02%"
+      },
+      {
+        "Sector": "Healthcare",
+        "Allocation": "3.88%"
+      },
+      {
+        "Sector": "Technology",
+        "Allocation": "3.52%"
+      },
+      {
+        "Sector": "Metals & Mining",
+        "Allocation": "2.87%"
+      },
+      {
+        "Sector": "Insurance",
+        "Allocation": "2.09%"
+      },
+      {
+        "Sector": "Communication",
+        "Allocation": "1.45%"
+      },
+      {
+        "Sector": "Consumer Discretionary",
+        "Allocation": "0.67%"
+      }
+    ],
+    "Equity / Debt / Cash Split": {
+      "Equity": "93.04%",
+      "Debt": "0.00%",
+      "Cash": "6.96%"
+    }
+  },
+  {
+    "Scheme Name": "Groww Liquid Fund Direct Growth",
+    "Tags": [
+      "Debt",
+      "Liquid",
+      "Low to Moderate Risk"
+    ],
+    "NAV 08 Mar '26": "₹2,660.55",
+    "Min. for SIP": "₹500",
+    "Expense ratio": "0.10%",
+    "Returns": {
+      "1 year": "+2.77%",
+      "3 years": "+10.26%",
+      "5 years": "+17.42%",
+      "10 years": "+35.07%"
+    },
+    "Top Holdings": [
+      {
+        "Name": "Kotak Mahindra Securities Ltd.",
+        "Sector": "Financial",
+        "Allocation": "11.17%"
+      },
+      {
+        "Name": "Bank Of Baroda",
+        "Sector": "Financial",
+        "Allocation": "10.27%"
+      },
+      {
+        "Name": "Kotak Mahindra Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "8.84%"
+      },
+      {
+        "Name": "Indian Bank",
+        "Sector": "Financial",
+        "Allocation": "8.81%"
+      },
+      {
+        "Name": "Axis Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "8.80%"
+      }
+    ],
+    "Fund Managers": [
+      {
+        "Name": "Kaustubh Sule",
+        "Education": "Mr. Sule is a B.E. (Computer Engineering) & MBA (Finance)",
+        "Experience": "Prior to joining Groww Mutual Fund (formerly, Indiabulls Mutual Fund), he has worked with Axis Asset Management Company Ltd. HDFC Standard Life Insurance Company Ltd., Reliance Life Insurance Company Ltd., Union Bank of India, Hexaware Technologies Ltd."
+      }
+    ],
+    "Tax Implications": {
+      "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
+      "Tax implication": "Returns are taxed as per your Income Tax slab."
+    },
+    "Sector Allocation": [
+      {
+        "Sector": "Financial",
+        "Allocation": "84.81%"
+      },
+      {
+        "Sector": "Energy",
+        "Allocation": "4.99%"
+      }
+    ],
+    "Equity / Debt / Cash Split": {
+      "Equity": "0.00%",
+      "Debt": "89.80%",
+      "Cash": "10.20%"
+    }
+  },
+  {
+    "Scheme Name": "Groww Nifty EV & New Age Automotive ETF FoF Direct Growth",
+    "Tags": [
+      "Equity",
+      "Thematic",
+      "Very High Risk"
+    ],
+    "NAV 06 Mar '26": "₹9.09",
+    "Min. for SIP": "₹500",
+    "Expense ratio": "0.19%",
+    "Returns": {
+      "3 months": "-2.33%",
+      "6 months": "-3.70%",
+      "1 year": "+0.02%"
+    },
+    "Top Holdings": [
+      {
+        "Name": "Groww Nifty EV & New Age Automotive ETF-Growth",
+        "Sector": "--",
+        "Allocation": "100.08%"
+      }
+    ],
+    "Fund Managers": [
+      {
+        "Name": "Nikhil Satam",
+        "Education": "B. com, Masters in Finance.",
+        "Experience": "Prior to joining Groww MF he was associated with Groww Invest Tech Private Ltd (formerly known as Nextbillion Technology Pvt. Ltd)."
+      },
+      {
+        "Name": "Aakash Ashokkumar Chauhan",
+        "Education": "MBA in Finance",
+        "Experience": "Prior to Joining Groww AMC, he was associated with Trust Mutual Fund, Mirae Asset Capital Markets (India) Pvt Ltd. & BP Wealth Pvt Ltd."
+      },
+      {
+        "Name": "Shashi Kumar",
+        "Education": "BBA, PGDBM",
+        "Experience": "Prior to joining Groww MF, he was associated with Bharti Axa Life Co. Ltd. & Canara HSBC Life Insurance Co. Ltd."
+      }
+    ],
+    "Tax Implications": {
+      "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
+      "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+    },
+    "Sector Allocation": [],
+    "Equity / Debt / Cash Split": {
+      "Equity": "0.00%",
+      "Debt": "0.00%",
+      "Cash": "100.08%"
+    }
+  },
+  {
+    "Scheme Name": "Groww Large Cap Fund Direct Growth",
+    "Tags": [
+      "Equity",
+      "Large Cap",
+      "Very High Risk"
+    ],
+    "NAV 06 Mar '26": "₹51.36",
+    "Min. for SIP": "₹500",
+    "Expense ratio": "1.26%",
+    "Returns": {
+      "1 year": "+7.43%",
+      "3 years": "+23.83%",
+      "5 years": "+43.90%",
+      "10 years": "+105.88%"
+    },
+    "Top Holdings": [
+      {
+        "Name": "HDFC Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "8.36%"
+      },
+      {
+        "Name": "ICICI Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "8.35%"
+      },
+      {
+        "Name": "Larsen & Toubro Ltd.",
+        "Sector": "Construction",
+        "Allocation": "7.10%"
+      },
+      {
+        "Name": "State Bank of India",
+        "Sector": "Financial",
+        "Allocation": "5.28%"
+      },
+      {
+        "Name": "Bharti Airtel Ltd.",
+        "Sector": "Communication",
+        "Allocation": "4.85%"
+      }
+    ],
+    "Fund Managers": [
+      {
+        "Name": "Anupam Tiwari",
+        "Education": "Mr. Tiwari is a Chartered Accountant.",
+        "Experience": "Prior to joining Groww Mutual Fund (formerly, Indiabulls Mutual Fund), he was associated with Axis Mutual Fund, Principal Mutual Fund (July 25, 2011-Sep 21, 2016), Reliance Life Insurance Ltd. (Sep 22, 2010-Jul 15, 2011) and Reliance MF (Mar 21, 2005-Sep 21, 2010)."
+      },
+      {
+        "Name": "Saptarshee Chatterjee",
+        "Education": "CFA Level 3, PGDM (Finance), BE (E.T.C.E) from Jadavpur University.",
+        "Experience": "Prior to joining Groww MF he was associated with Centrum Wealth Management Limited & Edelweiss Financial Services Limited."
+      },
+      {
+        "Name": "Gagan Thareja",
+        "Education": "Master of Finance",
+        "Experience": "Prior to joining the Groww MF, he was associated with ASK Investment Managers, Kotak Investment Advisors Ltd."
+      }
+    ],
+    "Tax Implications": {
+      "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
+      "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+    },
+    "Sector Allocation": [
+      {
+        "Sector": "Financial",
+        "Allocation": "36.37%"
+      },
+      {
+        "Sector": "Construction",
+        "Allocation": "13.92%"
+      },
+      {
+        "Sector": "Automobile",
+        "Allocation": "8.87%"
+      },
+      {
+        "Sector": "Energy",
+        "Allocation": "5.44%"
+      },
+      {
+        "Sector": "Services",
+        "Allocation": "5.07%"
+      },
+      {
+        "Sector": "Capital Goods",
+        "Allocation": "4.87%"
+      },
+      {
+        "Sector": "Communication",
+        "Allocation": "4.85%"
+      },
+      {
+        "Sector": "Healthcare",
+        "Allocation": "4.63%"
+      },
+      {
+        "Sector": "Technology",
+        "Allocation": "3.85%"
+      },
+      {
+        "Sector": "Consumer Staples",
+        "Allocation": "1.22%"
+      },
+      {
+        "Sector": "Metals & Mining",
+        "Allocation": "1.18%"
+      }
+    ],
+    "Equity / Debt / Cash Split": {
+      "Equity": "90.26%",
+      "Debt": "0.00%",
+      "Cash": "9.74%"
+    }
+  },
+  {
+    "Scheme Name": "Groww Overnight Fund Direct Growth",
+    "Tags": [
+      "Debt",
+      "Overnight",
+      "Low Risk"
+    ],
+    "NAV 08 Mar '26": "₹1,383.13",
+    "Min. for SIP": "₹500",
+    "Expense ratio": "0.14%",
+    "Returns": {
+      "6 months": "+1.03%",
+      "1 year": "+2.38%",
+      "3 years": "+8.94%",
+      "5 years": "+15.46%"
+    },
+    "Top Holdings": [
+      {
+        "Name": "GOI",
+        "Sector": "Sovereign",
+        "Allocation": "0.14%"
+      },
+      {
+        "Name": "GOI",
+        "Sector": "Sovereign",
+        "Allocation": "0.14%"
+      }
+    ],
+    "Fund Managers": [
+      {
+        "Name": "Kaustubh Sule",
+        "Education": "Mr. Sule is a B.E. (Computer Engineering) & MBA (Finance)",
+        "Experience": "Prior to joining Groww Mutual Fund (formerly, Indiabulls Mutual Fund), he has worked with Axis Asset Management Company Ltd. HDFC Standard Life Insurance Company Ltd., Reliance Life Insurance Company Ltd., Union Bank of India, Hexaware Technologies Ltd."
+      }
+    ],
+    "Tax Implications": {
+      "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
+      "Tax implication": "Returns are taxed as per your Income Tax slab."
+    },
+    "Sector Allocation": [
+      {
+        "Sector": "Sovereign",
+        "Allocation": "0.29%"
+      }
+    ],
+    "Equity / Debt / Cash Split": {
+      "Equity": "0.00%",
+      "Debt": "0.29%",
+      "Cash": "99.71%"
+    }
+  }
+]
