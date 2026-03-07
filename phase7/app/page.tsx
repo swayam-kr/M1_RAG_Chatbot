@@ -154,63 +154,73 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col h-screen w-full bg-slate-950 text-slate-100 overflow-hidden"
+    <main className="flex flex-col h-[100dvh] w-full bg-slate-950 text-slate-100 overflow-hidden"
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
       {/* ── 1. Top Navbar ── */}
-      <nav className="bg-slate-900 border-b border-slate-800 px-5 py-3 flex items-center justify-between shrink-0 z-20 shadow-md">
-        <div className="flex items-center gap-4">
+      <nav className="bg-slate-900 border-b border-slate-800 px-3 sm:px-5 py-2.5 sm:py-3 flex flex-wrap items-center justify-between shrink-0 z-20 shadow-md gap-y-2">
+        <div className="flex items-center gap-3 sm:gap-4">
           {/* Custom Groww SVG Logo */}
-          <div className="w-10 h-10 shrink-0 flex items-center justify-center">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 flex items-center justify-center">
             <svg viewBox="0 0 120 120" className="w-full h-full shadow-lg" style={{ borderRadius: '50%' }}>
               <rect width="120" height="120" fill="#00D09C" />
               <path d="M0,70 L35,45 L65,75 L120,30 L120,0 L0,0 Z" fill="#5367FF" />
             </svg>
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-bold text-[17px] text-slate-100 tracking-tight">Groww PureFact</span>
-            <span className="text-[12px] text-slate-400 font-medium mt-0.5">Unbiased. Unopinionated. Purely factual fund insights.</span>
+            <span className="font-bold text-[15px] sm:text-[17px] text-slate-100 tracking-tight">Groww PureFact</span>
+            <span className="text-[10px] sm:text-[12px] text-slate-400 font-medium mt-0.5 hidden sm:block">Unbiased. Unopinionated. Purely factual fund insights.</span>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className={`flex items-center gap-2 border rounded-full px-3 py-1.5 text-[11px] font-bold shadow-sm transition-all ${backendOnline === null ? 'border-slate-700 text-slate-500 bg-slate-800/50' :
+          <div className={`flex items-center gap-1.5 sm:gap-2 border rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-bold shadow-sm transition-all ${backendOnline === null ? 'border-slate-700 text-slate-500 bg-slate-800/50' :
             backendOnline ? 'border-emerald-500/30 text-emerald-400 bg-emerald-900/20' :
               'border-red-500/30 text-red-400 bg-red-900/20'
             }`}>
-            {backendOnline === null ? <RefreshCw className="w-3 h-3 animate-spin" /> :
-              backendOnline ? <Wifi className="w-3 h-3" /> :
-                <WifiOff className="w-3 h-3" />}
-            {backendOnline === null ? 'Checking...' : backendOnline ? 'Backend Online' : 'Backend Offline'}
+            {backendOnline === null ? <RefreshCw className="w-3 h-3 animate-spin shrink-0" /> :
+              backendOnline ? <Wifi className="w-3 h-3 shrink-0" /> :
+                <WifiOff className="w-3 h-3 shrink-0" />}
+            <span className="hidden sm:inline">
+              {backendOnline === null ? 'Checking...' : backendOnline ? 'Backend Online' : 'Backend Offline'}
+            </span>
           </div>
         </div>
       </nav>
 
       {/* ── Sub-nav tabs ── */}
-      <div className="bg-slate-900 border-b border-slate-800 px-5 flex shrink-0 z-10">
+      <div className="bg-slate-900 border-b border-slate-800 px-3 sm:px-5 flex shrink-0 z-10 overflow-x-auto custom-scrollbar">
         {(['Chat', 'Fund Info'] as const).map(tab => (
           <button key={tab} onClick={() => setActiveTab(tab)}
-            className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold border-b-2 transition-all ${activeTab === tab
+            className={`flex items-center whitespace-nowrap gap-2 px-4 sm:px-5 py-2.5 sm:py-3 text-[13px] sm:text-sm font-semibold border-b-2 transition-all ${activeTab === tab
               ? 'border-indigo-500 text-indigo-400'
               : 'border-transparent text-slate-500 hover:text-slate-300 hover:border-slate-600'
               }`}>
-            {tab === 'Chat' && <MessageSquare className="w-4 h-4" />}
-            {tab === 'Fund Info' && <BarChart2 className="w-4 h-4" />}
+            {tab === 'Chat' && <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+            {tab === 'Fund Info' && <BarChart2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
             {tab}
           </button>
         ))}
       </div>
 
       {/* ── Body ── */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden relative">
+
+        {/* Mobile Backdrop */}
+        {sidebarOpen && (
+          <div
+            className="absolute inset-0 bg-slate-950/60 z-20 md:hidden backdrop-blur-sm"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
 
         {/* ── 2. Collapsible Left Sidebar ── */}
-        <aside className={`flex flex-col bg-slate-900 border-r border-slate-800 shrink-0 transition-all duration-300 overflow-hidden ${sidebarOpen ? 'w-64' : 'w-12'}`}>
+        <aside className={`flex flex-col bg-slate-900 border-r border-slate-800 shrink-0 transition-all duration-300 overflow-hidden z-30 ${sidebarOpen ? 'absolute md:relative h-full w-[80%] sm:w-64 shadow-2xl md:shadow-none' : 'relative w-12'}`}>
           {/* Header row with toggle */}
           <button onClick={() => setSidebarOpen(p => !p)}
             className="flex items-center justify-between px-3 py-3 border-b border-slate-800 hover:bg-slate-800/50 transition-colors text-slate-400 hover:text-slate-200 shrink-0">
-            {sidebarOpen && <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Fund Context</span>}
-            {sidebarOpen ? <ChevronLeft className="w-4 h-4 ml-auto" /> : <ChevronRight className="w-4 h-4 mx-auto" />}
+            {sidebarOpen && <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 truncate pr-2">Fund Context</span>}
+            {sidebarOpen ? <ChevronLeft className="w-4 h-4 shrink-0" /> : <ChevronRight className="w-4 h-4 mx-auto shrink-0" />}
           </button>
 
           {sidebarOpen && (
@@ -259,16 +269,16 @@ export default function Home() {
           {activeTab === 'Chat' && (
             <>
               {/* Sub-header: context bar */}
-              <div className="border-b border-slate-800 px-5 py-3 bg-slate-900/40 shrink-0 flex flex-wrap items-center gap-2">
-                <span className="text-sm font-bold text-slate-300">Groww PureFact</span>
-                <span className="text-slate-700">·</span>
-                <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${selectedFund === null ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+              <div className="border-b border-slate-800 px-3 sm:px-5 py-2 sm:py-3 bg-slate-900/40 shrink-0 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="text-xs sm:text-sm font-bold text-slate-300">Groww PureFact</span>
+                <span className="text-slate-700 hidden sm:inline">·</span>
+                <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold border ${selectedFund === null ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                   }`}>
                   {selectedFund === null ? 'Groww AMC' : shortName(selectedFund.name)}
                 </span>
                 {lastRefreshed && (
-                  <span className="bg-slate-800 text-slate-400 border border-slate-700 px-3 py-1 rounded-full text-[11px] font-medium flex items-center gap-1.5">
-                    <RefreshCw className="w-3 h-3 text-slate-500" /> Data last updated on {lastRefreshed}
+                  <span className="bg-slate-800 text-slate-400 border border-slate-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-medium flex items-center gap-1 sm:gap-1.5">
+                    <RefreshCw className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-500 shrink-0" /> <span className="hidden xs:inline sm:inline">Data last updated on</span> {lastRefreshed}
                   </span>
                 )}
               </div>
@@ -277,21 +287,21 @@ export default function Home() {
               <div className="flex-1 overflow-y-auto custom-scrollbar px-4 py-6 space-y-5 bg-slate-950">
                 {currentMessages.length === 0 ? (
                   /* ── Context-aware Empty State ── */
-                  <div className="flex flex-col items-center justify-center h-full text-center py-16 px-4 animate-in fade-in duration-500">
-                    <div className={`w-16 h-16 border rounded-2xl flex items-center justify-center mb-5 ${emptyStateContent.iconBg}`}>
+                  <div className="flex flex-col items-center justify-center h-full text-center py-10 sm:py-16 px-4 animate-in fade-in duration-500">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 border rounded-2xl flex items-center justify-center mb-4 sm:mb-5 ${emptyStateContent.iconBg}`}>
                       {emptyStateContent.icon}
                     </div>
-                    <span className={`text-[11px] font-bold uppercase tracking-widest border rounded-full px-3 py-1 mb-4 ${emptyStateContent.tagColor}`}>
+                    <span className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border rounded-full px-3 py-1 mb-3 sm:mb-4 ${emptyStateContent.tagColor}`}>
                       {emptyStateContent.tag}
                     </span>
-                    <h2 className="text-xl font-bold text-slate-200 mb-3 max-w-sm">{emptyStateContent.headline}</h2>
-                    <p className="max-w-md text-slate-500 text-sm leading-relaxed mb-8">{emptyStateContent.subtext}</p>
+                    <h2 className="text-lg sm:text-xl font-bold text-slate-200 mb-2 sm:mb-3 max-w-sm">{emptyStateContent.headline}</h2>
+                    <p className="max-w-md text-slate-500 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">{emptyStateContent.subtext}</p>
 
                     {/* Suggestion chips */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-xl w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 max-w-xl w-full">
                       {emptyStateContent.chips.map((chip, i) => (
                         <button key={i} onClick={() => handleSubmit(undefined, chip)}
-                          className={`border hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-[13px] font-medium px-4 py-3 rounded-xl text-left transition-all leading-snug ${selectedFund === null ? 'bg-slate-900 border-[#5367FF]/20 hover:border-[#5367FF]/50' : 'bg-slate-900 border-[#00D09C]/20 hover:border-[#00D09C]/50'
+                          className={`border hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-[12px] sm:text-[13px] font-medium px-4 py-3 rounded-xl text-left transition-all leading-snug ${selectedFund === null ? 'bg-slate-900 border-[#5367FF]/20 hover:border-[#5367FF]/50' : 'bg-slate-900 border-[#00D09C]/20 hover:border-[#00D09C]/50'
                             }`}>
                           {chip}
                         </button>
@@ -346,19 +356,19 @@ export default function Home() {
               </div>
 
               {/* ── Sticky input bar ── */}
-              <div className="border-t border-slate-800 bg-slate-900 px-5 py-4 shrink-0">
-                <form onSubmit={handleSubmit} className="flex gap-3 max-w-4xl mx-auto">
+              <div className="border-t border-slate-800 bg-slate-900 px-3 sm:px-5 py-3 sm:py-4 shrink-0 mt-auto w-full">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3 max-w-4xl mx-auto w-full">
                   <input ref={inputRef} type="text" value={query}
                     onChange={e => setQuery(e.target.value)}
                     placeholder={selectedFund
                       ? `Ask a fact about ${shortName(selectedFund.name)}...`
-                      : 'Ask about Groww AMC — AUM, schemes, CEO, how to invest...'}
+                      : 'Ask about Groww AMC...'}
                     disabled={isLoading} data-testid="chat-input"
-                    className="flex-1 bg-slate-800 border border-slate-700 focus:border-indigo-500 focus:ring-0 focus:outline-none rounded-xl px-5 py-3.5 text-[14.5px] text-slate-200 placeholder-slate-500 font-medium disabled:opacity-50 transition-colors"
+                    className="flex-1 w-full bg-slate-800 border border-slate-700 focus:border-indigo-500 focus:ring-0 focus:outline-none rounded-xl px-4 sm:px-5 py-3.5 sm:py-3.5 text-[14px] sm:text-[14.5px] text-slate-200 placeholder-slate-500 font-medium disabled:opacity-50 transition-colors"
                   />
                   <button type="submit" disabled={isLoading || !query.trim()} data-testid="chat-submit"
-                    className="bg-[#5367FF] hover:bg-[#4355eb] active:bg-[#3342cc] disabled:opacity-40 disabled:cursor-not-allowed text-white px-7 py-3.5 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-[#5367FF]/20 min-w-[110px] justify-center">
-                    {isLoading ? 'Wait...' : <><Send className="w-4 h-4" /> Ask</>}
+                    className="bg-[#5367FF] hover:bg-[#4355eb] w-full sm:w-auto active:bg-[#3342cc] disabled:opacity-40 disabled:cursor-not-allowed text-white px-7 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#5367FF]/20 min-w-[110px]">
+                    {isLoading ? 'Wait...' : <><Send className="w-4 h-4 shrink-0" /> Ask</>}
                   </button>
                 </form>
               </div>
@@ -367,24 +377,24 @@ export default function Home() {
 
           {/* ── FUND INFO TAB ── */}
           {activeTab === 'Fund Info' && (
-            <div className="flex-1 overflow-y-auto custom-scrollbar px-6 py-8 bg-slate-950">
+            <div className="flex-1 overflow-y-auto custom-scrollbar px-5 sm:px-6 py-6 sm:py-8 bg-slate-950">
               <div className="max-w-3xl mx-auto">
-                <h1 className="text-2xl font-bold text-slate-100 mb-1">Covered Mutual Funds</h1>
-                <p className="text-sm text-slate-500 mb-8">All fund data is sourced exclusively from Groww official pages.</p>
-                <div className="space-y-4">
+                <h1 className="text-xl sm:text-2xl font-bold text-slate-100 mb-1">Covered Mutual Funds</h1>
+                <p className="text-[13px] sm:text-sm text-slate-500 mb-6 sm:mb-8">All fund data is sourced exclusively from Groww official pages.</p>
+                <div className="space-y-3 sm:space-y-4">
                   {FUNDS.map((fund, i) => (
-                    <div key={i} className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-slate-700 transition-all">
+                    <div key={i} className="bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row justify-between sm:items-center gap-3 sm:gap-4 hover:border-slate-700 transition-all">
                       <div>
-                        <h3 className="font-bold text-slate-200 text-base mb-2">{fund.name}</h3>
+                        <h3 className="font-bold text-slate-200 text-[14.5px] sm:text-base mb-2">{fund.name}</h3>
                         <div className="flex gap-2 flex-wrap">
-                          <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${fund.category === 'Equity' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                          <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full border ${fund.category === 'Equity' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                             }`}>{fund.category}</span>
-                          <span className="text-[11px] font-bold px-2.5 py-1 rounded-full border bg-slate-800 text-slate-400 border-slate-700">{fund.risk} Risk</span>
+                          <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full border bg-slate-800 text-slate-400 border-slate-700">{fund.risk} Risk</span>
                         </div>
                       </div>
                       <a href={fund.url} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-bold text-indigo-400 hover:text-indigo-300 shrink-0 group transition-colors">
-                        View on Groww <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        className="flex items-center gap-1.5 sm:gap-2 text-[13px] sm:text-sm font-bold text-indigo-400 hover:text-indigo-300 shrink-0 group transition-colors">
+                        View on Groww <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </a>
                     </div>
                   ))}
