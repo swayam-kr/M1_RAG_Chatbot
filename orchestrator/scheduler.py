@@ -8,10 +8,11 @@ def job():
     script_path = os.path.join(os.path.dirname(__file__), "run_pipeline.py")
     cwd = os.path.dirname(__file__)
     
+    import sys
     try:
         # Execute the orchestrator python script synchronously
         subprocess.run(
-            ["python3", "run_pipeline.py"],
+            [sys.executable, "run_pipeline.py"],
             cwd=cwd,
             check=True
         )
@@ -26,17 +27,17 @@ def job():
         print(e)
         
 def start_scheduler():
-    # Schedule the job every day at exactly 10:00 PM local time.
-    # 10:00 PM is selected to scrape the mutual fund data after trading hours.
+    # Schedule the job every day at the given time. 22:00 is default production time.
+    schedule_time = os.environ.get("SCHEDULE_TIME", "22:00")
     print("Initializing Groww RAG Engine Scheduler...")
-    print("Next execution is scheduled for: Everyday at 10:00 PM.")
+    print(f"Next execution is scheduled for: Everyday at {schedule_time}.")
     
-    schedule.every().day.at("22:00").do(job)
+    schedule.every().day.at(schedule_time).do(job)
     
     # Infinite loop to keep the scheduler watching the clock
     while True:
         schedule.run_pending()
-        time.sleep(60) # Sleep 60 seconds to prevent CPU pinning
+        time.sleep(5) # Sleep 5 seconds to be highly responsive for testing
 
 if __name__ == "__main__":
     start_scheduler()

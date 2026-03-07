@@ -95,8 +95,10 @@ sequenceDiagram
 ```
 
 ### 1.3 Key Components and Strategy
-*   **Headless Browser Engine:** Used to natively render the React/Next.js frontend of Groww.
-*   **Wait Strategies:** Hardcoded explicit waits or network-idle triggers to ensure all DOM elements (especially asynchronous fund details) are fully populated before extraction.
+*   **Automation Scheduler (Cron):** A Python script (`orchestrator/scheduler.py`) is rigidly armed to perpetually execute the entire end-to-end framework automatically at **10:00 PM** daily, explicitly gathering data after Indian markets close for guaranteed freshness.
+*   **Headless Browser Engine:** Used to natively render the React/Next.js frontend of Groww via Playwright.
+*   **Comprehensive Dehydration (JSON Scraping):** By intercepting the backend `__NEXT_DATA__` React payload via BeautifulSoup, the engine perfectly extracts metrics like **Exit Load** and **Fund Size** instantaneously instead of painfully parsing floating HTML tags.
+*   **Regex Fallbacks:** Actively hunts for disjointed UI arrays such as the explicitly rendered **Cash Equivalent** composition to enforce total alignment with front-end pie charts, injecting the exact balance straight into the LLM context vectors.
 
 ### 1.4 Why X over Y?
 | Evaluated Options | JS Rendering Valid? | Anti-Bot Evasion | Verdict |
