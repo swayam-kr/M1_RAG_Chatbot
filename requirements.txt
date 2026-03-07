@@ -1,0 +1,14 @@
+beautifulsoup4==4.14.3
+chromadb==1.5.2
+fastapi==0.128.8
+groq==0.37.1
+langchain==0.3.28
+langchain-community==0.3.31
+langchain-core==0.3.83
+langchain-groq==0.3.8
+langchain-text-splitters==0.3.11
+playwright==1.58.0
+pydantic==2.12.5
+schedule==1.2.2
+sentence-transformers==5.1.2
+uvicorn==0.39.0
