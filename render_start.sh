@@ -3,6 +3,12 @@
 # Exit script if any command fails
 set -e
 
+# Rebuild ChromaDB vectors natively in Linux from the JSON chunks
+echo "Reconstructing ChromaDB Database locally..."
+cd phase4 || exit
+python3 run_phase4.py
+cd ..
+
 # Start the FastAPI server
 echo "Starting FastAPI server..."
 cd phase5 || exit
