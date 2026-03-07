@@ -3,6 +3,11 @@
 # Exit script if any command fails
 set -e
 
+# Optimize for Render Free Tier (512MB RAM Limit)
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export ANONYMIZED_TELEMETRY=False
+
 # Rebuild ChromaDB vectors natively in Linux from the JSON chunks
 echo "Reconstructing ChromaDB Database locally..."
 cd phase4 || exit
