@@ -1,11 +1,7 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.5.1+cpu
-torchaudio==2.5.1+cpu
-torchvision==0.20.1+cpu
-
 beautifulsoup4==4.14.3
 chromadb==0.5.21
 fastapi==0.115.6
+fastembed==0.5.1
 groq==0.13.1
 langchain==0.3.14
 langchain-community==0.3.14
@@ -16,6 +12,5 @@ playwright==1.49.1
 pydantic==2.10.4
 pydantic-settings==2.7.0
 schedule==1.2.2
-sentence-transformers==3.3.1
 tokenizers==0.20.3
 uvicorn==0.34.0

@@ -1,6 +1,6 @@
 import os
 import chromadb
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 
 DB_DIR = os.path.join(os.path.dirname(__file__), "db")
 COLLECTION_NAME = "mutual_funds"
@@ -15,16 +15,9 @@ def get_embedding_function():
     """
     global _embedding_fn
     if _embedding_fn is None:
-        print("Loading HuggingFace BGE Model locally (first time only)...")
-        model_name = "BAAI/bge-small-en-v1.5"
-        model_kwargs = {"device": "cpu"}
-        encode_kwargs = {"normalize_embeddings": True}
-        _embedding_fn = HuggingFaceBgeEmbeddings(
-            model_name=model_name,
-            model_kwargs=model_kwargs,
-            encode_kwargs=encode_kwargs
-        )
-        print("BGE Model loaded and cached.")
+        print("Loading FastEmbed BGE Model locally (first time only)...")
+        _embedding_fn = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+        print("FastEmbed BGE Model loaded and cached.")
     return _embedding_fn
 
 def get_db_client():
