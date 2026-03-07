@@ -1,11 +1,10 @@
 # Virtual Environments
 venv/
 .venv/
-env/
-.env
+# ChromaDB local persistence
+phase4/db/
 
-
-# Next.js
+# Orchestrator & Scraper output files
 phase7/.next/
 phase7/node_modules/
 phase7/.swc/
