@@ -32,8 +32,7 @@ def extract_scheme_data(html):
         pills = pills_container.find_all("div", class_=lambda c: c and "pill12Pill" in c)
         data["Tags"] = [p.text.strip() for p in pills]
     
-    # 3. Fund Details (NAV, Min SIP, Expense Ratio)
-    # Removing Fund size and Exit Load as they are already in the AMC overview data per user request
+    # 3. Fund Details (NAV, Min SIP, Expense Ratio, Fund Size)
     details_container = soup.find("div", class_=lambda c: c and "fundDetails_fundDetailsContainer" in c)
     if details_container:
         blocks = details_container.find_all("div", class_=lambda c: c and "fundDetails_gap4" in c, recursive=False)
@@ -43,8 +42,6 @@ def extract_scheme_data(html):
             if label_el and val_el:
                 label = label_el.text.strip().replace(":", "")
                 val = val_el.text.strip()
-                if "Fund size" in label:
-                    continue # Skip Fund Size
                 if "Expense ratio" in label:
                     label = "Expense ratio"
                 data[label] = val
@@ -87,7 +84,7 @@ def extract_scheme_data(html):
                 managers.append(name_div.text.strip())
     data["Fund Managers"] = managers
 
-    # 7. Tax Implications (Excluding Exit Load explicitly as requested)
+    # 7. Tax Implications & Exit Load
     tax_info = {}
     tax_sections = soup.find_all("div", class_=lambda c: c and "exitLoadStampDutyTax_section" in c)
     for section in tax_sections:
@@ -95,8 +92,7 @@ def extract_scheme_data(html):
         content = section.find("div", class_="bodyBase contentSecondary")
         if heading and content:
             head_text = heading.text.strip()
-            if "Exit load" not in head_text: 
-                tax_info[head_text] = content.text.strip()
+            tax_info[head_text] = content.text.strip()
     data["Tax Implications"] = tax_info
 
     # 8. Advanced Ratios, Sector Allocation, Splits and Detailed Fund Managers (From __NEXT_DATA__)
@@ -137,12 +133,32 @@ def extract_scheme_data(html):
                     debt_pct += alloc
                 else:
                     cash_pct += alloc
-            
-            # The holdings list might be partial or just Top N. The remaining balance to 100% is always Cash Equivalent.
-            # But the UI dynamically shows sum of all holdings. Groww calculates the cash remainder explicitly.
-            total_invested = equity_pct + debt_pct + cash_pct
-            if total_invested < 100:
-                cash_pct += (100.0 - total_invested)
+
+            # We look for the exact Cash Equivalent percentage that the UI renders
+            import re
+            cash_match = re.search(r'"sector_name":"Cash Equivalent","corpus_per":([0-9.]+)', html)
+            if cash_match:
+                cash_pct = float(cash_match.group(1))
+                # Adjust debt or equity accordingly if cash is forcibly set
+                if "overnight" in scheme_name.lower() or "liquid" in scheme_name.lower():
+                    debt_pct = 100.0 - cash_pct
+            else:
+                total_invested = equity_pct + debt_pct + cash_pct
+                if total_invested < 100:
+                    cash_pct += (100.0 - total_invested)
+                    
+            if cash_pct > 0:
+                # Ensure it appears in both visualizations so the LLM knows it's a huge holding
+                data["Top Holdings"].insert(0, {
+                    "Name": "Cash Equivalent",
+                    "Sector": "Cash",
+                    "Allocation": f"{cash_pct:.2f}%"
+                })
+                # Add to sector allocation explicitly
+                data["Sector Allocation"].insert(0, {
+                    "Sector": "Cash Equivalent",
+                    "Allocation": f"{cash_pct:.2f}%"
+                })
                 
             data["Equity / Debt / Cash Split"] = {
                 "Equity": f"{equity_pct:.2f}%",
@@ -163,6 +179,11 @@ def extract_scheme_data(html):
             
             if detailed_managers:
                 data["Fund Managers"] = detailed_managers
+
+            # --- Exit Load ---
+            exit_load = mf_data.get("exit_load")
+            if exit_load:
+                data["Exit Load"] = exit_load
                 
         except Exception as e:
             pass
