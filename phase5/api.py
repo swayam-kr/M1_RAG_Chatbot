@@ -78,16 +78,6 @@ async def chat_endpoint(request: ChatRequest):
         # Pass the selected fund so the retriever can apply a hard source_url filter
         chunks = retrieve_top_k(sanitized_query, k=4, selected_fund=selected_fund)
         
-        if isinstance(chunks, str):
-            # This means retriever.py returned a Python stack trace
-            return ChatResponse(
-                status="error",
-                message="Render Python Backend Crashed",
-                answer=f"**CRITICAL PYTHON ERROR:**\n\n```python\n{chunks}\n```",
-                sources=[],
-                last_refreshed=get_last_refreshed()
-            )
-
         if not chunks:
             return ChatResponse(
                 status="error",
@@ -113,12 +103,6 @@ async def chat_endpoint(request: ChatRequest):
             last_refreshed=get_last_refreshed()
         )
     except Exception as e:
-        import traceback
-        print("======== GENERATION ERROR ========", flush=True)
-        traceback.print_exc()
-        print(f"Error Message: {str(e)}", flush=True)
-        print("==================================", flush=True)
-        
         return ChatResponse(
             status="error",
             message=f"Internal Generation Error: {str(e)}",
