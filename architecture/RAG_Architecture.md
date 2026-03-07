@@ -224,7 +224,8 @@ sequenceDiagram
 **Embeddings Consideration:**
 | Evaluated Options | Dimensions | Speed | Benchmark Accuracy (MTEB) | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| **HuggingFace BGE (bge-small-en-v1.5)** | 384 | Fast | **Top-tier for small models** | **Selected:** Best balance of mathematical accuracy and local free-compute speed. |
+| **HuggingFace BGE via FastEmbed (bge-small-en-v1.5)** | 384 | Ultra-Fast | **Top-tier for small models** | **Selected:** Runs the exact BGE model using ONNX mathematically rather than PyTorch, dropping the memory footprint from ~500MB+ to ~150MB to easily clear Render Free Tier 512MB RAM constraints while keeping perfect mathematical accuracy. |
+| **HuggingFace BGE via PyTorch (sentence-transformers)** | 384 | Fast | Excellent | **Rejected:** PyTorch dependencies consistently triggered Render Out-of-Memory (OOM) 512MB limits during ChromaDB database initializations. |
 | **OpenAI text-embedding-3-small** | 1536 | API Bound | Excellent | **Rejected:** incurs continuous costs for the daily ingestion cycle. |
 
 ### 4.5 Error Handling and Resilience
