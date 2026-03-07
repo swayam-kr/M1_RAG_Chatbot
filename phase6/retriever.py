@@ -40,11 +40,17 @@ def retrieve_top_k(query: str, k: int = 4, selected_fund: str = None):
     try:
         collection = client.get_collection(name=COLLECTION_NAME)
     except Exception as e:
-        print("Database collection not found. Please ensure Phase 4 ran successfully.")
-        return []
+        import traceback
+        err = traceback.format_exc()
+        return f"DB INIT ERROR: {str(e)}\n\n{err}"
 
-    embed_fn = get_embedding_function()
-    query_vector = embed_fn.embed_query(query)
+    try:
+        embed_fn = get_embedding_function()
+        query_vector = embed_fn.embed_query(query)
+    except Exception as e:
+        import traceback
+        err = traceback.format_exc()
+        return f"EMBED ERROR: {str(e)}\n\n{err}"
 
     # --- Priority 1: Hard filter when a specific fund is selected by the user ---
     where_filter = None
