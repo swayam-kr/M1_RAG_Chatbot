@@ -94,6 +94,11 @@ async def chat_endpoint(request: ChatRequest):
         # If the generated answer is the explicit Fallback, suppress sources
         if "Oops, I don't think I have idea about this" in answer:
             sources = []
+            
+        # If the LLM flagged this as a non-factual conversational response, suppress sources
+        if "<NO_SOURCES>" in answer:
+            sources = []
+            answer = answer.replace("<NO_SOURCES>", "").strip()
         
         return ChatResponse(
             status="allowed",
