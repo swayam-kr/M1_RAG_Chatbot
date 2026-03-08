@@ -1,16 +1,43 @@
+# ==========================================
+# Groww Mutual Fund RAG Assistant Dependencies
+# ==========================================
+
+# --- 1. Web Scraping & Data Extraction ---
+# Beautiful Soup is used to parse the raw HTML structure of web pages and extract specific JSON data chunks invisibly embedded by Next.js.
 beautifulsoup4==4.14.3
+# Playwright is a headless browser automation tool. Because Groww is a dynamic React app (SPA), we use Playwright to physically render the JavaScript on a simulated screen before scraping.
+playwright==1.49.1
+
+# --- 2. Vector Database & Storage ---
+# ChromaDB is our local vector database. It stores the mathematical representations of text locally in a SQLite file (.db) allowing us to search meaning without paying for external APIs.
 chromadb==0.5.21
+
+# --- 3. Backend API Gateway ---
+# FastAPI is the ultra-fast Python web framework that creates our backend endpoints (like POST /api/chat) that the frontend talks to.
 fastapi==0.115.6
+# Uvicorn is the server engine that physically runs the FastAPI application.
+uvicorn==0.34.0
+# Pydantic is used by FastAPI to strictly validate the data structures (e.g. ensuring a chat request actually contains a \"query\" string).
+pydantic==2.10.4
+pydantic-settings==2.7.0
+
+# --- 4. Machine Learning & Embeddings ---
+# FastEmbed is a highly optimized, lightweight embedding generation library. It converts our scraped text into 384-dimensional mathematical vectors using the BAAI/bge-small-en-v1.5 model directly on the CPU, using only ~150MB of RAM (perfect for Render's free tier).
 fastembed==0.5.1
+# Tokenizers is a low-level library used to split text into computer-readable tokens before feeding it to the AI.
+tokenizers==0.20.3
+
+# --- 5. Language Model Integrations ---
+# Groq provides the ultra-fast API endpoint we use to query the Llama 3.1 8B open-source model.
 groq==0.13.1
+# LangChain is a framework that helps us string together steps: taking user input, retrieving ChromaDB vectors, and passing them to Groq in a structured template.
 langchain==0.3.14
 langchain-community==0.3.14
 langchain-core==0.3.29
 langchain-groq==0.2.1
+# Langchain Text Splitters is used specifically to chop our massive scraped HTML documents into tiny, readable 500-character chunks so they can be accurately searched.
 langchain-text-splitters==0.3.5
-playwright==1.49.1
-pydantic==2.10.4
-pydantic-settings==2.7.0
+
+# --- 6. Automation & Orchestration ---
+# Schedule is an incredibly lightweight Python library that allows us to set up automated cron jobs (e.g. running the scraper every single day at 10:00 PM).
 schedule==1.2.2
-tokenizers==0.20.3
-uvicorn==0.34.0
