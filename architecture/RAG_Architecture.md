@@ -176,8 +176,8 @@ graph TD
     C --> F[Metadata Injector]
     D --> G[Metadata Injector]
     
-    F -->|Dict: {url, timestamp}| H[Final Tagged Chunk]
-    G -->|Dict: {url, timestamp}| H
+    F -->|Dict: url, timestamp| H[Final Tagged Chunk]
+    G -->|Dict: url, timestamp| H
 ```
 
 ### 3.3 Key Components and Strategy
@@ -259,8 +259,8 @@ graph TD
     B --> C(Apply PII Regex Scrub)
     C --> D{Intent Classifier Heuristics}
     
-    D -->|Match: "Advice", "Best Fund", "Compare"| E[Terminate & Return Fixed Message]
-    D -->|Match: "Exit Load", "Expense Ratio"| F[Pass cleanly to Retrieval Phase]
+    D -->|Match: Advice, Best Fund, Compare| E[Terminate & Return Fixed Message]
+    D -->|Match: Exit Load, Expense Ratio| F[Pass cleanly to Retrieval Phase]
 ```
 
 ### 5.3 Key Components and Strategy
