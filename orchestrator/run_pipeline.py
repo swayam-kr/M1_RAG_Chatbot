@@ -52,8 +52,31 @@ def main():
         with open(ts_path, "w") as f:
             f.write(datetime.now().isoformat())
             
+        print("\n==============================================")
+        print("🚀 AUTOMATING GITHUB DATA SYNC FOR RENDER")
+        print("==============================================")
+        repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        try:
+            # Stage the localized text data
+            subprocess.run(
+                ["git", "add", "orchestrator/last_refreshed.txt", "phase1", "phase2", "phase3", "orchestrator/scheduler.log"], 
+                cwd=repo_root, 
+                check=True
+            )
+            # Check if there are changes to commit
+            status_result = subprocess.run(["git", "status", "--porcelain"], cwd=repo_root, capture_output=True, text=True)
+            if status_result.stdout.strip():
+                subprocess.run(["git", "commit", "-m", "chore: Nightly automated data ingestion sync"], cwd=repo_root, check=True)
+                subprocess.run(["git", "push", "origin", "main"], cwd=repo_root, check=True)
+                print("✅ Successfully pushed fresh data to GitHub. Render and Vercel will now auto-deploy!")
+            else:
+                print("ℹ️ No new data changes detected to push.")
+        except subprocess.CalledProcessError as e:
+            print("❌ Git Sync Error:", e)
+            print("Continuing despite Git error...")
+
         overall_duration = time.time() - overall_start
-        print(f"🎉 MASTER PIPELINE FINISHED SUCCESSFULLY! Total time: {overall_duration:.2f} seconds.")
+        print(f"\n🎉 MASTER PIPELINE FINISHED SUCCESSFULLY! Total time: {overall_duration:.2f} seconds.")
         print("💡 The Vector Database is now fully updated and armed with fresh data.")
         
     except Exception as e:
