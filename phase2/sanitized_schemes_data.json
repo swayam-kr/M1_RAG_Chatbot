@@ -6,14 +6,20 @@
       "Multi Cap",
       "Very High Risk"
     ],
-    "NAV 06 Mar '26": "₹10.48",
+    "NAV 09 Mar '26": "₹10.25",
     "Min. for SIP": "₹500",
+    "Fund size": "₹325.96 Cr",
     "Expense ratio": "0.51%",
     "Returns": {
       "3 months": "+2.33%",
       "6 months": "+5.13%"
     },
     "Top Holdings": [
+      {
+        "Name": "Cash Equivalent",
+        "Sector": "Cash",
+        "Allocation": "6.96%"
+      },
       {
         "Name": "Larsen & Toubro Ltd.",
         "Sector": "Construction",
@@ -58,10 +64,15 @@
       }
     ],
     "Tax Implications": {
+      "Exit load": "Exit load of 1%, if redeemed within 1 year.",
       "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
       "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
     },
     "Sector Allocation": [
+      {
+        "Sector": "Cash Equivalent",
+        "Allocation": "6.96%"
+      },
       {
         "Sector": "Financial",
         "Allocation": "29.63%"
@@ -115,7 +126,8 @@
       "Equity": "93.04%",
       "Debt": "0.00%",
       "Cash": "6.96%"
-    }
+    },
+    "Exit Load": "Exit load of 1%, if redeemed within 1 year."
   },
   {
     "Scheme Name": "Groww Liquid Fund Direct Growth",
@@ -124,40 +136,46 @@
       "Liquid",
       "Low to Moderate Risk"
     ],
-    "NAV 08 Mar '26": "₹2,660.55",
+    "NAV 09 Mar '26": "₹2,660.89",
     "Min. for SIP": "₹500",
+    "Fund size": "₹163.94 Cr",
     "Expense ratio": "0.10%",
     "Returns": {
-      "1 year": "+2.77%",
-      "3 years": "+10.26%",
-      "5 years": "+17.42%",
+      "1 year": "+2.75%",
+      "3 years": "+10.24%",
+      "5 years": "+17.41%",
       "10 years": "+35.07%"
     },
     "Top Holdings": [
       {
-        "Name": "Kotak Mahindra Securities Ltd.",
-        "Sector": "Financial",
-        "Allocation": "11.17%"
+        "Name": "Cash Equivalent",
+        "Sector": "Cash",
+        "Allocation": "14.24%"
       },
       {
         "Name": "Bank Of Baroda",
         "Sector": "Financial",
-        "Allocation": "10.27%"
+        "Allocation": "10.66%"
+      },
+      {
+        "Name": "Canara Bank",
+        "Sector": "Financial",
+        "Allocation": "9.13%"
       },
       {
         "Name": "Kotak Mahindra Bank Ltd.",
         "Sector": "Financial",
-        "Allocation": "8.84%"
-      },
-      {
-        "Name": "Indian Bank",
-        "Sector": "Financial",
-        "Allocation": "8.81%"
+        "Allocation": "9.13%"
       },
       {
         "Name": "Axis Bank Ltd.",
         "Sector": "Financial",
-        "Allocation": "8.80%"
+        "Allocation": "9.13%"
+      },
+      {
+        "Name": "Aditya Birla Capital Ltd.",
+        "Sector": "Financial",
+        "Allocation": "9.12%"
       }
     ],
     "Fund Managers": [
@@ -168,24 +186,30 @@
       }
     ],
     "Tax Implications": {
+      "Exit load": "Exit load of 0.0070% if redeemed within 1 day, 0.0065% if redeemed within 2 days, 0.0060% if redeemed within 3 days, 0.0055% if redeemed within 4 days, 0.0050% if redeemed within 5 days, 0.0045% if redeemed within 6 days.",
       "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
       "Tax implication": "Returns are taxed as per your Income Tax slab."
     },
     "Sector Allocation": [
       {
+        "Sector": "Cash Equivalent",
+        "Allocation": "14.24%"
+      },
+      {
         "Sector": "Financial",
-        "Allocation": "84.81%"
+        "Allocation": "80.58%"
       },
       {
         "Sector": "Energy",
-        "Allocation": "4.99%"
+        "Allocation": "5.18%"
       }
     ],
     "Equity / Debt / Cash Split": {
       "Equity": "0.00%",
-      "Debt": "89.80%",
-      "Cash": "10.20%"
-    }
+      "Debt": "85.76%",
+      "Cash": "14.24%"
+    },
+    "Exit Load": "Exit load of 0.0070% if redeemed within 1 day, 0.0065% if redeemed within 2 days, 0.0060% if redeemed within 3 days, 0.0055% if redeemed within 4 days, 0.0050% if redeemed within 5 days, 0.0045% if redeemed within 6 days."
   },
   {
     "Scheme Name": "Groww Nifty EV & New Age Automotive ETF FoF Direct Growth",
@@ -194,15 +218,21 @@
       "Thematic",
       "Very High Risk"
     ],
-    "NAV 06 Mar '26": "₹9.09",
+    "NAV 09 Mar '26": "₹8.86",
     "Min. for SIP": "₹500",
+    "Fund size": "₹148.98 Cr",
     "Expense ratio": "0.19%",
     "Returns": {
-      "3 months": "-2.33%",
-      "6 months": "-3.70%",
-      "1 year": "+0.02%"
+      "3 months": "-4.27%",
+      "6 months": "-5.87%",
+      "1 year": "-2.48%"
     },
     "Top Holdings": [
+      {
+        "Name": "Cash Equivalent",
+        "Sector": "Cash",
+        "Allocation": "100.08%"
+      },
       {
         "Name": "Groww Nifty EV & New Age Automotive ETF-Growth",
         "Sector": "--",
@@ -227,15 +257,22 @@
       }
     ],
     "Tax Implications": {
+      "Exit load": "Exit load of 1%, if redeemed within 30 days.",
       "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
       "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
     },
-    "Sector Allocation": [],
+    "Sector Allocation": [
+      {
+        "Sector": "Cash Equivalent",
+        "Allocation": "100.08%"
+      }
+    ],
     "Equity / Debt / Cash Split": {
       "Equity": "0.00%",
       "Debt": "0.00%",
       "Cash": "100.08%"
-    }
+    },
+    "Exit Load": "Exit load of 1%, if redeemed within 30 days."
   },
   {
     "Scheme Name": "Groww Large Cap Fund Direct Growth",
@@ -244,8 +281,9 @@
       "Large Cap",
       "Very High Risk"
     ],
-    "NAV 06 Mar '26": "₹51.36",
+    "NAV 09 Mar '26": "₹50.40",
     "Min. for SIP": "₹500",
+    "Fund size": "₹129.04 Cr",
     "Expense ratio": "1.26%",
     "Returns": {
       "1 year": "+7.43%",
@@ -254,6 +292,11 @@
       "10 years": "+105.88%"
     },
     "Top Holdings": [
+      {
+        "Name": "Cash Equivalent",
+        "Sector": "Cash",
+        "Allocation": "9.74%"
+      },
       {
         "Name": "HDFC Bank Ltd.",
         "Sector": "Financial",
@@ -298,10 +341,15 @@
       }
     ],
     "Tax Implications": {
+      "Exit load": "Exit load of 1%, if redeemed within 7 days.",
       "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
       "Tax implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
     },
     "Sector Allocation": [
+      {
+        "Sector": "Cash Equivalent",
+        "Allocation": "9.74%"
+      },
       {
         "Sector": "Financial",
         "Allocation": "36.37%"
@@ -351,7 +399,8 @@
       "Equity": "90.26%",
       "Debt": "0.00%",
       "Cash": "9.74%"
-    }
+    },
+    "Exit Load": "Exit load of 1%, if redeemed within 7 days."
   },
   {
     "Scheme Name": "Groww Overnight Fund Direct Growth",
@@ -360,16 +409,22 @@
       "Overnight",
       "Low Risk"
     ],
-    "NAV 08 Mar '26": "₹1,383.13",
+    "NAV 09 Mar '26": "₹1,383.31",
     "Min. for SIP": "₹500",
+    "Fund size": "₹125.94 Cr",
     "Expense ratio": "0.14%",
     "Returns": {
       "6 months": "+1.03%",
       "1 year": "+2.38%",
       "3 years": "+8.94%",
-      "5 years": "+15.46%"
+      "5 years": "+15.45%"
     },
     "Top Holdings": [
+      {
+        "Name": "Cash Equivalent",
+        "Sector": "Cash",
+        "Allocation": "99.71%"
+      },
       {
         "Name": "GOI",
         "Sector": "Sovereign",
@@ -389,10 +444,15 @@
       }
     ],
     "Tax Implications": {
+      "Exit load": "Nil",
       "Stamp duty on investment: 0.005% (from July 1st, 2020)": "from July 1st 2020",
       "Tax implication": "Returns are taxed as per your Income Tax slab."
     },
     "Sector Allocation": [
+      {
+        "Sector": "Cash Equivalent",
+        "Allocation": "99.71%"
+      },
       {
         "Sector": "Sovereign",
         "Allocation": "0.29%"
@@ -402,6 +462,7 @@
       "Equity": "0.00%",
       "Debt": "0.29%",
       "Cash": "99.71%"
-    }
+    },
+    "Exit Load": "Nil"
   }
 ]

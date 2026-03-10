@@ -2,13 +2,18 @@ import schedule
 import time
 import subprocess
 import os
+import sys
+from datetime import datetime
 
 def job():
-    print("\n⏰ [SCHEDULER] Triggering Daily Groww Mutual Fund RAG Pipeline...")
-    script_path = os.path.join(os.path.dirname(__file__), "run_pipeline.py")
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"\n==============================================")
+    print(f"⏰ [{current_time}] Triggering Daily Groww Mutual Fund RAG Pipeline...")
+    print(f"==============================================\n")
+    sys.stdout.flush()
+    
     cwd = os.path.dirname(__file__)
     
-    import sys
     try:
         # Execute the orchestrator python script synchronously
         subprocess.run(
@@ -16,16 +21,23 @@ def job():
             cwd=cwd,
             check=True
         )
-        print("⏰ [SCHEDULER] Daily Pipeline Execution Succeeded.\n")
+        finish_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"\n⏰ [{finish_time}] Daily Pipeline Execution Succeeded.\n")
     except subprocess.CalledProcessError as e:
-        print("⏰ [SCHEDULER] Daily Pipeline Execution FAILED.")
+        error_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"\n❌ [{error_time}] Daily Pipeline Execution FAILED.")
         print(e)
+    
+    sys.stdout.flush()
         
 def start_scheduler():
     # Schedule the job every day at the given time. 22:00 is default production time.
     schedule_time = os.environ.get("SCHEDULE_TIME", "22:00")
-    print("Initializing Groww RAG Engine Scheduler...")
-    print(f"Next execution is scheduled for: Everyday at {schedule_time}.")
+    
+    startup_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{startup_time}] Initializing Groww RAG Engine Background Scheduler...")
+    print(f"[{startup_time}] Next execution is scheduled for: Everyday at {schedule_time}.")
+    sys.stdout.flush()
     
     schedule.every().day.at(schedule_time).do(job)
     
