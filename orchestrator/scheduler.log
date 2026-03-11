@@ -5,3 +5,105 @@
 ⏰ [2026-03-10 22:00:00] Triggering Daily Groww Mutual Fund RAG Pipeline...
 ==============================================
 
+[main a0b9bad] chore: Nightly automated data ingestion sync
+ Committer: Kumar Swayam <kumarswayam@Kumars-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 30 insertions(+), 23 deletions(-)
+ create mode 100644 orchestrator/scheduler.log
+To https://github.com/swayam-kr/M1_RAG_Chatbot.git
+   7e0484c..a0b9bad  main -> main
+Starting Groww Mutual Fund RAG Master Pipeline...
+
+==============================================
+🚀 INITIALIZING PHASE1 - run_phase1.py
+==============================================
+Step 1: Scraping AMC Overview and fetching Top 5 Funds...
+Step 2: Fetching HTML for Groww Multicap Fund (https://groww.in/mutual-funds/groww-multicap-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Multicap Fund...
+Step 2: Fetching HTML for Groww Liquid Fund (https://groww.in/mutual-funds/groww-liquid-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Liquid Fund...
+Step 2: Fetching HTML for Groww Nifty EV & New Age Automotive ETF FoF Direct-Growth (https://groww.in/mutual-funds/groww-nifty-ev-new-age-automotive-etf-fof-direct-growth)...
+Step 3: Extracting scheme details for Groww Nifty EV & New Age Automotive ETF FoF Direct-Growth...
+Step 2: Fetching HTML for Groww Large Cap Fund (https://groww.in/mutual-funds/groww-large-cap-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Large Cap Fund...
+Step 2: Fetching HTML for Groww Overnight Fund (https://groww.in/mutual-funds/groww-overnight-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Overnight Fund...
+Successfully processed 5 schemes.
+Done! Phase 1 pipeline completed. See 'all_schemes_data.json' and 'amc_data.json'.
+
+✅ PHASE1 Completed Successfully in 18.09 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE2 - run_phase2.py
+==============================================
+Step 1: Ingesting Raw Data from Phase 1...
+Step 2: Scrubbing PII from AMC Data (In-Memory)...
+Step 3: Scrubbing PII from All Schemes Data (In-Memory)...
+Step 4: Writing Secured Outputs to Phase 2 Datastore...
+Phase 2 complete. Secure sanitized files saved locally.
+
+✅ PHASE2 Completed Successfully in 0.02 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE3 - run_phase3.py
+==============================================
+Step 1: Reading Sanitized Output from Phase 2...
+Step 2: Processing and Chunking AMC Data...
+  -> Generated 6 chunks from AMC Root.
+Step 3: Processing and Chunking Individual Schemes Data...
+  -> Generated 4 chunks for Groww Multicap Fund Direct Growth.
+  -> Generated 3 chunks for Groww Liquid Fund Direct Growth.
+  -> Generated 3 chunks for Groww Nifty EV & New Age Automotive ETF FoF Direct Growth.
+  -> Generated 4 chunks for Groww Large Cap Fund Direct Growth.
+  -> Generated 2 chunks for Groww Overnight Fund Direct Growth.
+Step 4: Writing 22 Total Semantic Chunks to output DB file...
+Phase 3 complete! Semantic vectors ready for ML Embedding Phase 4.
+
+✅ PHASE3 Completed Successfully in 0.33 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE4 - run_phase4.py
+==============================================
+Step 1: Ingesting Semantic Chunks from Phase 3...
+Loaded 22 explicit text chunk objects.
+Step 2: Vectorizing and Persisting into Local Database...
+Purged existing collection 'mutual_funds'.
+Loading FastEmbed BGE Model locally (first time only)...
+FastEmbed BGE Model loaded and cached.
+Generating 384D vectors for 22 documents. This might take a moment...
+Upserting vectors into ChromaDB at /Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase4/db...
+Vector database successfully populated.
+Phase 4 complete! All semantic vectors proudly reside in ChromaDB ready for dynamic querying.
+
+✅ PHASE4 Completed Successfully in 2.35 seconds.
+
+
+==============================================
+🚀 AUTOMATING GITHUB DATA SYNC FOR RENDER
+==============================================
+✅ Successfully pushed fresh data to GitHub. Render and Vercel will now auto-deploy!
+
+🎉 MASTER PIPELINE FINISHED SUCCESSFULLY! Total time: 22.36 seconds.
+💡 The Vector Database is now fully updated and armed with fresh data.
+
+⏰ [2026-03-10 22:00:22] Daily Pipeline Execution Succeeded.
+
+
+==============================================
+⏰ [2026-03-11 22:00:04] Triggering Daily Groww Mutual Fund RAG Pipeline...
+==============================================
+
