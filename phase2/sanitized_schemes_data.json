@@ -6,7 +6,7 @@
       "Multi Cap",
       "Very High Risk"
     ],
-    "NAV 11 Mar '26": "₹10.23",
+    "NAV 13 Mar '26": "₹9.88",
     "Min. for SIP": "₹500",
     "Fund size": "₹374.78 Cr",
     "Expense ratio": "0.51%",
@@ -18,32 +18,32 @@
       {
         "Name": "Cash Equivalent",
         "Sector": "Cash",
-        "Allocation": "6.96%"
-      },
-      {
-        "Name": "Larsen & Toubro Ltd.",
-        "Sector": "Construction",
-        "Allocation": "4.61%"
-      },
-      {
-        "Name": "Multi Commodity Exchange Of India Ltd.",
-        "Sector": "Services",
-        "Allocation": "3.27%"
+        "Allocation": "7.78%"
       },
       {
         "Name": "TD Power Systems Ltd.",
         "Sector": "Capital Goods",
-        "Allocation": "2.80%"
+        "Allocation": "4.65%"
       },
       {
-        "Name": "Bank of Maharashtra",
-        "Sector": "Financial",
-        "Allocation": "2.51%"
+        "Name": "Larsen & Toubro Ltd.",
+        "Sector": "Construction",
+        "Allocation": "4.36%"
+      },
+      {
+        "Name": "Apar Industries Ltd.",
+        "Sector": "Consumer Staples",
+        "Allocation": "3.52%"
       },
       {
         "Name": "HDFC Bank Ltd.",
         "Sector": "Financial",
-        "Allocation": "2.44%"
+        "Allocation": "2.75%"
+      },
+      {
+        "Name": "Multi Commodity Exchange Of India Ltd.",
+        "Sector": "Services",
+        "Allocation": "2.75%"
       }
     ],
     "Fund Managers": [
@@ -71,61 +71,65 @@
     "Sector Allocation": [
       {
         "Sector": "Cash Equivalent",
-        "Allocation": "6.96%"
+        "Allocation": "7.78%"
       },
       {
         "Sector": "Financial",
-        "Allocation": "29.63%"
-      },
-      {
-        "Sector": "Automobile",
-        "Allocation": "10.83%"
-      },
-      {
-        "Sector": "Services",
-        "Allocation": "10.81%"
-      },
-      {
-        "Sector": "Construction",
-        "Allocation": "10.43%"
+        "Allocation": "26.95%"
       },
       {
         "Sector": "Capital Goods",
-        "Allocation": "9.82%"
+        "Allocation": "11.88%"
+      },
+      {
+        "Sector": "Automobile",
+        "Allocation": "11.33%"
+      },
+      {
+        "Sector": "Services",
+        "Allocation": "9.12%"
+      },
+      {
+        "Sector": "Construction",
+        "Allocation": "8.34%"
       },
       {
         "Sector": "Chemicals",
-        "Allocation": "7.02%"
+        "Allocation": "7.06%"
       },
       {
         "Sector": "Healthcare",
-        "Allocation": "3.88%"
+        "Allocation": "4.98%"
       },
       {
-        "Sector": "Technology",
+        "Sector": "Consumer Staples",
         "Allocation": "3.52%"
       },
       {
         "Sector": "Metals & Mining",
-        "Allocation": "2.87%"
+        "Allocation": "2.92%"
       },
       {
         "Sector": "Insurance",
-        "Allocation": "2.09%"
+        "Allocation": "1.80%"
       },
       {
-        "Sector": "Communication",
-        "Allocation": "1.45%"
+        "Sector": "Technology",
+        "Allocation": "1.77%"
       },
       {
         "Sector": "Consumer Discretionary",
-        "Allocation": "0.67%"
+        "Allocation": "1.35%"
+      },
+      {
+        "Sector": "Communication",
+        "Allocation": "1.21%"
       }
     ],
     "Equity / Debt / Cash Split": {
-      "Equity": "93.04%",
+      "Equity": "92.22%",
       "Debt": "0.00%",
-      "Cash": "6.96%"
+      "Cash": "7.78%"
     },
     "Exit Load": "Exit load of 1%, if redeemed within 1 year."
   },
@@ -136,15 +140,15 @@
       "Liquid",
       "Low to Moderate Risk"
     ],
-    "NAV 11 Mar '26": "₹2,661.75",
+    "NAV 15 Mar '26": "₹2,663.15",
     "Min. for SIP": "₹500",
     "Fund size": "₹163.94 Cr",
     "Expense ratio": "0.10%",
     "Returns": {
       "1 year": "+2.75%",
-      "3 years": "+10.24%",
-      "5 years": "+17.40%",
-      "10 years": "+35.07%"
+      "3 years": "+10.22%",
+      "5 years": "+17.38%",
+      "10 years": "+35.05%"
     },
     "Top Holdings": [
       {
@@ -218,25 +222,25 @@
       "Thematic",
       "Very High Risk"
     ],
-    "NAV 11 Mar '26": "₹8.78",
+    "NAV 13 Mar '26": "₹8.38",
     "Min. for SIP": "₹500",
     "Fund size": "₹156.91 Cr",
     "Expense ratio": "0.19%",
     "Returns": {
-      "3 months": "-4.73%",
-      "6 months": "-6.50%",
-      "1 year": "-3.28%"
+      "3 months": "-7.80%",
+      "6 months": "-10.13%",
+      "1 year": "-7.42%"
     },
     "Top Holdings": [
       {
         "Name": "Cash Equivalent",
         "Sector": "Cash",
-        "Allocation": "100.08%"
+        "Allocation": "100.09%"
       },
       {
         "Name": "Groww Nifty EV & New Age Automotive ETF-Growth",
         "Sector": "--",
-        "Allocation": "100.08%"
+        "Allocation": "100.09%"
       }
     ],
     "Fund Managers": [
@@ -264,13 +268,13 @@
     "Sector Allocation": [
       {
         "Sector": "Cash Equivalent",
-        "Allocation": "100.08%"
+        "Allocation": "100.09%"
       }
     ],
     "Equity / Debt / Cash Split": {
       "Equity": "0.00%",
       "Debt": "0.00%",
-      "Cash": "100.08%"
+      "Cash": "100.09%"
     },
     "Exit Load": "Exit load of 1%, if redeemed within 30 days."
   },
@@ -281,7 +285,7 @@
       "Large Cap",
       "Very High Risk"
     ],
-    "NAV 11 Mar '26": "₹50.11",
+    "NAV 13 Mar '26": "₹48.49",
     "Min. for SIP": "₹500",
     "Fund size": "₹132.19 Cr",
     "Expense ratio": "1.26%",
@@ -295,32 +299,32 @@
       {
         "Name": "Cash Equivalent",
         "Sector": "Cash",
-        "Allocation": "9.74%"
-      },
-      {
-        "Name": "HDFC Bank Ltd.",
-        "Sector": "Financial",
-        "Allocation": "8.36%"
+        "Allocation": "9.94%"
       },
       {
         "Name": "ICICI Bank Ltd.",
         "Sector": "Financial",
-        "Allocation": "8.35%"
+        "Allocation": "8.30%"
+      },
+      {
+        "Name": "HDFC Bank Ltd.",
+        "Sector": "Financial",
+        "Allocation": "7.80%"
       },
       {
         "Name": "Larsen & Toubro Ltd.",
         "Sector": "Construction",
-        "Allocation": "7.10%"
+        "Allocation": "6.74%"
       },
       {
         "Name": "State Bank of India",
         "Sector": "Financial",
-        "Allocation": "5.28%"
+        "Allocation": "4.64%"
       },
       {
-        "Name": "Bharti Airtel Ltd.",
-        "Sector": "Communication",
-        "Allocation": "4.85%"
+        "Name": "Reliance Industries Ltd.",
+        "Sector": "Energy",
+        "Allocation": "4.31%"
       }
     ],
     "Fund Managers": [
@@ -348,57 +352,61 @@
     "Sector Allocation": [
       {
         "Sector": "Cash Equivalent",
-        "Allocation": "9.74%"
+        "Allocation": "9.94%"
       },
       {
         "Sector": "Financial",
-        "Allocation": "36.37%"
+        "Allocation": "34.81%"
       },
       {
         "Sector": "Construction",
-        "Allocation": "13.92%"
+        "Allocation": "11.42%"
       },
       {
         "Sector": "Automobile",
-        "Allocation": "8.87%"
-      },
-      {
-        "Sector": "Energy",
-        "Allocation": "5.44%"
-      },
-      {
-        "Sector": "Services",
-        "Allocation": "5.07%"
-      },
-      {
-        "Sector": "Capital Goods",
-        "Allocation": "4.87%"
-      },
-      {
-        "Sector": "Communication",
-        "Allocation": "4.85%"
+        "Allocation": "10.68%"
       },
       {
         "Sector": "Healthcare",
-        "Allocation": "4.63%"
+        "Allocation": "6.56%"
+      },
+      {
+        "Sector": "Capital Goods",
+        "Allocation": "6.27%"
+      },
+      {
+        "Sector": "Energy",
+        "Allocation": "5.38%"
+      },
+      {
+        "Sector": "Services",
+        "Allocation": "4.77%"
+      },
+      {
+        "Sector": "Communication",
+        "Allocation": "4.13%"
       },
       {
         "Sector": "Technology",
-        "Allocation": "3.85%"
-      },
-      {
-        "Sector": "Consumer Staples",
-        "Allocation": "1.22%"
+        "Allocation": "2.92%"
       },
       {
         "Sector": "Metals & Mining",
-        "Allocation": "1.18%"
+        "Allocation": "1.27%"
+      },
+      {
+        "Sector": "Consumer Staples",
+        "Allocation": "1.17%"
+      },
+      {
+        "Sector": "Consumer Discretionary",
+        "Allocation": "0.68%"
       }
     ],
     "Equity / Debt / Cash Split": {
-      "Equity": "90.26%",
+      "Equity": "90.06%",
       "Debt": "0.00%",
-      "Cash": "9.74%"
+      "Cash": "9.94%"
     },
     "Exit Load": "Exit load of 1%, if redeemed within 7 days."
   },
@@ -409,7 +417,7 @@
       "Overnight",
       "Low Risk"
     ],
-    "NAV 11 Mar '26": "₹1,383.67",
+    "NAV 15 Mar '26": "₹1,384.43",
     "Min. for SIP": "₹500",
     "Fund size": "₹125.94 Cr",
     "Expense ratio": "0.14%",

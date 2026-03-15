@@ -208,3 +208,183 @@ Phase 4 complete! All semantic vectors proudly reside in ChromaDB ready for dyna
 ⏰ [2026-03-12 22:11:27] Triggering Daily Groww Mutual Fund RAG Pipeline...
 ==============================================
 
+[main f488483] chore: Nightly automated data ingestion sync
+ Committer: Kumar Swayam <kumarswayam@Kumars-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 7 files changed, 175 insertions(+), 74 deletions(-)
+To https://github.com/swayam-kr/M1_RAG_Chatbot.git
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at f48848341145400776ad20d4f1c3a0dc76433ca6 but expected b32169418b8a3762fb07d92c893bc57f00b85d3b)
+error: failed to push some refs to 'https://github.com/swayam-kr/M1_RAG_Chatbot.git'
+Starting Groww Mutual Fund RAG Master Pipeline...
+
+==============================================
+🚀 INITIALIZING PHASE1 - run_phase1.py
+==============================================
+Step 1: Scraping AMC Overview and fetching Top 5 Funds...
+Step 2: Fetching HTML for Groww Multicap Fund (https://groww.in/mutual-funds/groww-multicap-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Multicap Fund...
+Step 2: Fetching HTML for Groww Liquid Fund (https://groww.in/mutual-funds/groww-liquid-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Liquid Fund...
+Step 2: Fetching HTML for Groww Nifty EV & New Age Automotive ETF FoF Direct-Growth (https://groww.in/mutual-funds/groww-nifty-ev-new-age-automotive-etf-fof-direct-growth)...
+Step 3: Extracting scheme details for Groww Nifty EV & New Age Automotive ETF FoF Direct-Growth...
+Step 2: Fetching HTML for Groww Large Cap Fund (https://groww.in/mutual-funds/groww-large-cap-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Large Cap Fund...
+Step 2: Fetching HTML for Groww Overnight Fund (https://groww.in/mutual-funds/groww-overnight-fund-direct-growth)...
+Step 3: Extracting scheme details for Groww Overnight Fund...
+Successfully processed 5 schemes.
+Done! Phase 1 pipeline completed. See 'all_schemes_data.json' and 'amc_data.json'.
+
+✅ PHASE1 Completed Successfully in 2307.85 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE2 - run_phase2.py
+==============================================
+Step 1: Ingesting Raw Data from Phase 1...
+Step 2: Scrubbing PII from AMC Data (In-Memory)...
+Step 3: Scrubbing PII from All Schemes Data (In-Memory)...
+Step 4: Writing Secured Outputs to Phase 2 Datastore...
+Phase 2 complete. Secure sanitized files saved locally.
+
+✅ PHASE2 Completed Successfully in 0.02 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE3 - run_phase3.py
+==============================================
+Step 1: Reading Sanitized Output from Phase 2...
+Step 2: Processing and Chunking AMC Data...
+  -> Generated 6 chunks from AMC Root.
+Step 3: Processing and Chunking Individual Schemes Data...
+  -> Generated 4 chunks for Groww Multicap Fund Direct Growth.
+  -> Generated 3 chunks for Groww Liquid Fund Direct Growth.
+  -> Generated 3 chunks for Groww Nifty EV & New Age Automotive ETF FoF Direct Growth.
+  -> Generated 4 chunks for Groww Large Cap Fund Direct Growth.
+  -> Generated 2 chunks for Groww Overnight Fund Direct Growth.
+Step 4: Writing 22 Total Semantic Chunks to output DB file...
+Phase 3 complete! Semantic vectors ready for ML Embedding Phase 4.
+
+✅ PHASE3 Completed Successfully in 0.54 seconds.
+
+
+==============================================
+🚀 INITIALIZING PHASE4 - run_phase4.py
+==============================================
+Step 1: Ingesting Semantic Chunks from Phase 3...
+Loaded 22 explicit text chunk objects.
+Step 2: Vectorizing and Persisting into Local Database...
+Purged existing collection 'mutual_funds'.
+Loading FastEmbed BGE Model locally (first time only)...
+FastEmbed BGE Model loaded and cached.
+Generating 384D vectors for 22 documents. This might take a moment...
+Upserting vectors into ChromaDB at /Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase4/db...
+Vector database successfully populated.
+Phase 4 complete! All semantic vectors proudly reside in ChromaDB ready for dynamic querying.
+
+✅ PHASE4 Completed Successfully in 2.96 seconds.
+
+
+==============================================
+🚀 AUTOMATING GITHUB DATA SYNC FOR RENDER
+==============================================
+❌ Git Sync Error: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+Continuing despite Git error...
+
+🎉 MASTER PIPELINE FINISHED SUCCESSFULLY! Total time: 21793.57 seconds.
+💡 The Vector Database is now fully updated and armed with fresh data.
+
+⏰ [2026-03-13 04:14:40] Daily Pipeline Execution Succeeded.
+
+
+==============================================
+⏰ [2026-03-13 22:17:46] Triggering Daily Groww Mutual Fund RAG Pipeline...
+==============================================
+
+Starting Groww Mutual Fund RAG Master Pipeline...
+
+==============================================
+🚀 INITIALIZING PHASE1 - run_phase1.py
+==============================================
+❌ ERROR in PHASE1!
+Traceback (most recent call last):
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/run_phase1.py", line 55, in <module>
+    run_phase1()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/run_phase1.py", line 9, in run_phase1
+    scrape_amc_data()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/scraper.py", line 19, in scrape_amc_data
+    page.goto(URL, wait_until="networkidle")
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/sync_api/_generated.py", line 9054, in goto
+    self._sync(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://groww.in/mutual-funds/amc/groww-mutual-funds", waiting until "networkidle"
+
+
+🚨 PIPELINE HALTED DUE TO ERROR.
+
+⏰ [2026-03-13 22:22:38] Daily Pipeline Execution Succeeded.
+
+
+==============================================
+⏰ [2026-03-14 22:02:13] Triggering Daily Groww Mutual Fund RAG Pipeline...
+==============================================
+
+Starting Groww Mutual Fund RAG Master Pipeline...
+
+==============================================
+🚀 INITIALIZING PHASE1 - run_phase1.py
+==============================================
+❌ ERROR in PHASE1!
+Traceback (most recent call last):
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/run_phase1.py", line 55, in <module>
+    run_phase1()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/run_phase1.py", line 9, in run_phase1
+    scrape_amc_data()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/scraper.py", line 17, in scrape_amc_data
+    browser = p.chromium.launch(headless=True)
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/sync_api/_generated.py", line 14566, in launch
+    self._sync(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_browser_type.py", line 97, in launch
+    await self._channel.send(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kumarswayam/Desktop/M1_RAG_Chatbot/phase1/.venv/lib/python3.9/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: BrowserType.launch: Timeout 180000ms exceeded.
+Call log:
+  - <launching> /Users/kumarswayam/Library/Caches/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/5r/l2mhc3w163x56sqt763f_0tc0000gn/T/playwright_chromiumdev_profile-d3pFXC --remote-debugging-pipe --no-startup-window
+  - <launched> pid=40514
+
+
+🚨 PIPELINE HALTED DUE TO ERROR.
+
+⏰ [2026-03-14 22:17:41] Daily Pipeline Execution Succeeded.
+
+
+==============================================
+⏰ [2026-03-15 22:06:15] Triggering Daily Groww Mutual Fund RAG Pipeline...
+==============================================
+
